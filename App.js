@@ -1,10 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import { Client as Ice}  from './Client.js';
+//import { Ice } from '@env';
+
+const apps = {
+  ice: Ice
+};
+AppRegistry.registerComponent(ice, () => apps[Ice]);
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Test</Text>
+      <Text>Test </Text>
+      <Ice></Ice>
       <StatusBar style="auto" />
     </View>
   );
